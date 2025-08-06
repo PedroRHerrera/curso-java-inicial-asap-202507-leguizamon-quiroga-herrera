@@ -6,7 +6,7 @@ public class Curso {
     private String titulo;
     private double precio;
     private double estrellas;
-    private Usuarios[] usuarios;
+    private Usuario[] usuarios;
     private Usuario autor;
     private Leccion[] lecciones;
 
@@ -56,11 +56,11 @@ public class Curso {
         this.estrellas = estrellas;
     }
 
-    public Usuarios[] getUsuarios() {
+    public Usuario[] getUsuarios() {
         return usuarios;
     }
 
-    public void setUsuarios(Usuarios[] usuarios) {
+    public void setUsuarios(Usuario[] usuarios) {
         this.usuarios = usuarios;
     }
 
