@@ -9,8 +9,8 @@ public class Curso {
     private String titulo;
     private double precio;
     private double estrellas;
-    private List<Usuario> usuarios;
     private Usuario autor;
+    private List<Usuario> usuarios;
     private List<Leccion> lecciones;
 
 
@@ -81,5 +81,9 @@ public class Curso {
 
     public void setLecciones(ArrayList<Leccion> lecciones) {
         this.lecciones = lecciones;
+    }
+    
+    public boolean mismoId(int idCurso) {
+    	return this.id == idCurso;
     }
 }
