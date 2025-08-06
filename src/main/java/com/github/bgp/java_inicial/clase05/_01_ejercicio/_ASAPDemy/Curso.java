@@ -1,24 +1,27 @@
 package com.github.bgp.java_inicial.clase05._01_ejercicio._ASAPDemy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Curso {
 
     private int id;
     private String titulo;
     private double precio;
     private double estrellas;
-    private Usuario[] usuarios;
+    private List<Usuario> usuarios;
     private Usuario autor;
-    private Leccion[] lecciones;
+    private List<Leccion> lecciones;
 
 
-    public Curso(int id, String titulo, double precio, double estrellas) {
+    public Curso(int id, String titulo, double precio, double estrellas, Usuario autor) {
         this.id = id;
         this.titulo = titulo;
         this.precio = precio;
         this.estrellas = estrellas;
-        this.usuarios = usuarios;
         this.autor = autor;
-        this.lecciones = lecciones;
+        this.usuarios = new ArrayList<>();
+        this.lecciones = new ArrayList<>();
     }
 
     public Curso() {
@@ -56,11 +59,11 @@ public class Curso {
         this.estrellas = estrellas;
     }
 
-    public Usuario[] getUsuarios() {
+    public List<Usuario> getUsuarios() {
         return usuarios;
     }
 
-    public void setUsuarios(Usuario[] usuarios) {
+    public void setUsuarios(ArrayList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
 
@@ -72,11 +75,11 @@ public class Curso {
         this.autor = autor;
     }
 
-    public Leccion[] getLecciones() {
+    public List<Leccion> getLecciones() {
         return lecciones;
     }
 
-    public void setLecciones(Leccion[] lecciones) {
+    public void setLecciones(ArrayList<Leccion> lecciones) {
         this.lecciones = lecciones;
     }
 }
