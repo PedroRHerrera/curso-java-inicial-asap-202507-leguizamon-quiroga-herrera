@@ -1,0 +1,47 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>600</x><y>70</y><w>250</w><h>130</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Empresa
+-
+
+-
++ empleadoConMasClientes(): Empleado
++ mostrarSalarios(): void
++ agregarEmpleado(Empleado): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>290</y><w>210</w><h>220</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+/Empleado/
+-
+- dni: int
+- nombre: String
+- apellido: String
+- anioIngreso: int
+-
++ Empleado(int, String, String, int)
++ getAnioIngreso(): int
++ getSalario(): double
++ mostrarSalario(): void
++ mostrarEmpleado(): void 
+/+ calcularSalario(): double/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>610</y><w>290</w><h>180</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+EmpleadoComision
+-
+_- SALARIO_MINIMO: double = 20000_
+_- MONTO_A_COBRAR_X_CLIENTE: double = 5000_
+- cantidadClientes: int
+-
++ empleadoComision(int, String, String, int, int)
++ getCantidadClientes(): int
++ masClientes(int): boolean
++ calcularSalario(): double
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>760</x><y>610</y><w>290</w><h>180</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+EmpleadoSalarioFijo
+-
+_- SALARIO_BASICO: double = 40000_
+_- AD_M2: double = 0_
+_- AD_2_A_5: double = 0.05_
+_- AD_6_A_10: double = 0.1_
+_- AD_MAS_DE_10: double = 0.15_
+-
++ empleadoSalarioFijo(int, String, String, int)
+- calcularAntiguedad(): int
++ calcularSalario(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>500</y><w>220</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70;200;70;200;110</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>500</y><w>220</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>200;10;200;70;10;70;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>710</x><y>190</y><w>90</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+empleados
+m1=*</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element></diagram>

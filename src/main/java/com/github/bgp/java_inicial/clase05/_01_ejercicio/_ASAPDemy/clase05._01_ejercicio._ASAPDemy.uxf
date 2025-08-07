@@ -1,0 +1,102 @@
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><element><id>UMLClass</id><coordinates><x>770</x><y>286</y><w>187</w><h>198</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Usuario
+-
+- id: int
+- nombre: String
+- mail: String
+- esBecado: boolean
+-
++ getters()
++ setters()
++ mismoId(int):boolean
++ esBecado():boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>319</x><y>286</y><w>198</w><h>165</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Categoria
+-
+- id: int
+- nombre: String
+-
++ Categoria()
++ getters()
++ setters()
++ buscarCurso(int):Curso</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>561</y><w>330</w><h>275</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Curso
+-
+- id: int
+- titulo: String
+- precio: double
+- estrellas: double
+
+-
++ Curso()
++ getters()
++ setters()
++ mismoId(int):boolean
+- estaSuscrito(int):boolean
+- esAutor(int):boolean
+- limiteBecadosAlcanzado():boolean
++ suscribirUsuario(Usuario):RespuestaSuscripcion
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>341</x><y>935</y><w>176</w><h>143</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Leccion
+-
+- nombre: String
+- duracion: int
+--
++ Leccion()
++ getters()
++ setters()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>638</x><y>935</y><w>176</w><h>165</h></coordinates><panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+TipoLeccion
+-
+_+ TEXTO: TipoLeccion_
+_+ VIDEO: TipoLeccion_
+_+ RECURSO: TipoLeccion_
+-
++ getters()
++ setters()
+- TipoLeccion()
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>748</x><y>77</y><w>198</w><h>231</h></coordinates><panel_attributes>lt=&lt;-
+- usuarios
+m1=*</panel_attributes><additional_attributes>110;190;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>407</x><y>77</y><w>154</w><h>231</h></coordinates><panel_attributes>lt=&lt;-
+- categorias
+m1=*</panel_attributes><additional_attributes>10;190;10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>407</x><y>440</y><w>77</w><h>143</h></coordinates><panel_attributes>lt=&lt;-
+- cursos
+m1=1..*</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>583</x><y>330</y><w>209</w><h>286</h></coordinates><panel_attributes>lt=&lt;-
+- autor
+m1=1</panel_attributes><additional_attributes>170;10;60;10;60;240;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>407</x><y>825</y><w>99</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+- lecciones
+m1=1..*</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>506</x><y>968</y><w>154</w><h>55</h></coordinates><panel_attributes>lt=&lt;-
+- tipo
+m1=1</panel_attributes><additional_attributes>120;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>583</x><y>473</y><w>330</w><h>220</h></coordinates><panel_attributes>lt=&lt;-
+- usuarios
+m1=1..*</panel_attributes><additional_attributes>260;10;260;180;10;180</additional_attributes></element><element><id>UMLClass</id><coordinates><x>968</x><y>0</y><w>275</w><h>231</h></coordinates><panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+RespuestaSuscripcion
+-
+_+ CURSO_INEX: RespuestaSuscripcion_
+_+ USUARIO_INEX: RespuestaSuscripcion_
+_+ YA_SUSCRIPTO: RespuestaSuscripcion_
+_+ ES_AUTOR: RespuestaSuscripcion_
+_+ SUSCRIPTO_OK: RespuestaSuscripcion_
+
+-
++ getters()
++ setters
+- RespuestaSuscripcion(String):String
++ mostrarMensaje():void
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>748</x><y>44</y><w>242</w><h>33</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>200;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>583</x><y>220</y><w>550</w><h>561</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>480;10;480;490;10;490</additional_attributes></element><element><id>UMLClass</id><coordinates><x>539</x><y>11</y><w>220</w><h>176</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+ASAPDemy
+-
+
+-
++ ASAPDemy()
++ getters()
++ setters()
+- buscarUsuario(int):Usuario
+- buscarCurso(int):Curso
+- suscribirseACurso(int, int):void</panel_attributes><additional_attributes></additional_attributes></element></diagram>
