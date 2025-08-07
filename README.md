@@ -10,9 +10,9 @@
 
 ## 👨‍💻 Integrantes del equipo
 
-- 🧠 **Benjamín Leguizamón**  
-- 🔧 **Gonzalo Daniel Quiroga Sassu**  
-- ⚙️ **Pedro Ricardo Herrera**
+- **Benjamín Leguizamón**  
+- **Gonzalo Daniel Quiroga Sassu**  
+- **Pedro Ricardo Herrera**
 
 ---
 
