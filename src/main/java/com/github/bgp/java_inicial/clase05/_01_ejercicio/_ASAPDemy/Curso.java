@@ -14,14 +14,14 @@ public class Curso {
     private List<Leccion> lecciones;
 
 
-    public Curso(int id, String titulo, double precio, double estrellas, Usuario autor) {
+    public Curso(int id, String titulo, double precio, double estrellas, Usuario autor, List<Usuario> usuarios, List<Leccion> lecciones) {
         this.id = id;
         this.titulo = titulo;
         this.precio = precio;
         this.estrellas = estrellas;
         this.autor = autor;
-        this.usuarios = new ArrayList<>();
-        this.lecciones = new ArrayList<>();
+        this.usuarios = usuarios;
+        this.lecciones = lecciones;
     }
 
     public Curso() {

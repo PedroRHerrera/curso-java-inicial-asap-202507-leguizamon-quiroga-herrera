@@ -8,9 +8,10 @@ public class Leccion {
     public Leccion() {
     }
 
-    public Leccion(String nombre, Integer duracion) {
+    public Leccion(String nombre, Integer duracion, TipoLeccion tipoLeccion) {
         this.nombre = nombre;
         this.duracion = duracion;
+        this.tipoLeccion = tipoLeccion;
     }
 
     public String getNombre() {
