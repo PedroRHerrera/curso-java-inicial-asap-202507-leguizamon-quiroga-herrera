@@ -1,6 +1,5 @@
 package com.github.bgp.java_inicial.clase05._01_ejercicio._ASAPDemy;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Categoria {
@@ -10,10 +9,10 @@ public class Categoria {
 	private List<Curso> cursos;
 	
 	
-	public Categoria(int id, String nombre) {
+	public Categoria(int id, String nombre, List<Curso> cursos) {
 		this.id = id;
 		this.nombre = nombre;
-		this.cursos = new ArrayList<>();
+		this.cursos = cursos;
 	}
 
 

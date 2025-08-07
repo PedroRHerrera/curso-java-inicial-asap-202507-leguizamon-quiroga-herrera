@@ -124,24 +124,25 @@ public class Curso {
     	return respuesta;
     }
     
-    public void suscribirUsuario(Usuario usuario) {
+    public RespuestaSuscripcion suscribirUsuario(Usuario usuario) {
+    	RespuestaSuscripcion respuesta = RespuestaSuscripcion.SUSCRIPTO_OK;
     	if(!estaSuscrito(usuario.getId())) {
     		if (!esAutor(usuario.getId())) {
     			if (usuario.esBecado()) {
         			if (!limiteBecadosAlcanzado()) {
         				this.usuarios.add(usuario);
-        				
-        				System.out.println("Usuario suscrito con éxito.");
         			} else {
-        				System.out.println("Error. Límite de usuarios becados alcanzados: " + MAX_BECADOS);
+        				respuesta = RespuestaSuscripcion.MAX_BECADOS;
         			}
         		}
     		} else {
-    			System.out.println("Error. El usuario es el autor.");
+    			respuesta = RespuestaSuscripcion.ES_AUTOR;
     		}
     	} else {
-    		System.out.println("Error. El usuario ya está suscrito al curso.");
+    		respuesta = RespuestaSuscripcion.YA_SUSCRIPTO;
     	}
+    	
+    	return respuesta;
     }
     
     

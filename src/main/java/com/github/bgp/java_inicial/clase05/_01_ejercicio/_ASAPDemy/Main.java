@@ -9,11 +9,11 @@ public class Main {
 
         //Creamos 20 usuarios
         Usuario usuario1 = new Usuario(1, "Rodrigo Perez", "rodrigo.perez@email.com", true);
-        Usuario usuario2 = new Usuario(2, "Lucía Gómez", "lucia.gomez@email.com", false);
+        Usuario usuario2 = new Usuario(2, "Lucía Gómez", "lucia.gomez@email.com", true);
         Usuario usuario3 = new Usuario(3, "Carlos Sánchez", "carlos.sanchez@email.com", true);
-        Usuario usuario4 = new Usuario(4, "María Torres", "maria.torres@email.com", false);
+        Usuario usuario4 = new Usuario(4, "María Torres", "maria.torres@email.com", true);
         Usuario usuario5 = new Usuario(5, "Javier López", "javier.lopez@email.com", true);
-        Usuario usuario6 = new Usuario(6, "Ana Ruiz", "ana.ruiz@email.com", false);
+        Usuario usuario6 = new Usuario(6, "Ana Ruiz", "ana.ruiz@email.com", true);
         Usuario usuario7 = new Usuario(7, "Diego Fernández", "diego.fernandez@email.com", true);
         Usuario usuario8 = new Usuario(8, "Sofía Herrera", "sofia.herrera@email.com", false);
         Usuario usuario9 = new Usuario(9, "Manuel Castro", "manuel.castro@email.com", true);
@@ -64,7 +64,7 @@ public class Main {
         usuariosCurso1.add(usuario3);
         usuariosCurso1.add(usuario4);
         usuariosCurso1.add(usuario5);
-        usuariosCurso1.add(usuario6);
+        //usuariosCurso1.add(usuario6);
 
         List<Usuario> usuariosCurso2 = new ArrayList<>();
         usuariosCurso2.add(usuario7);
@@ -84,10 +84,40 @@ public class Main {
         Curso curso1 = new Curso(1, "Programacion I", 12000.0, 4.5, usuario16, usuariosCurso1, leccionesCurso1);
         Curso curso2 = new Curso(2, "Programacion II", 12000.0, 4.5, usuario18, usuariosCurso2, leccionesCurso2);
         Curso curso3 = new Curso(3, "Programacion III", 12000.0, 4.5, usuario20, usuariosCurso3, leccionesCurso3);
+        
+        List<Curso> cursosCategoria1 = new ArrayList<Curso>();
+        cursosCategoria1.add(curso1);
+        cursosCategoria1.add(curso2);
+        
+        List<Curso> cursosCategoria2 = new ArrayList<Curso>();
+        cursosCategoria1.add(curso3);
 
         //Creamos las categorias
-        Categoria categoria1 = new Categoria(1,"Programacion");
-        Categoria categoria2 = new Categoria(2,"Laboratorio de programacion");
+        Categoria categoria1 = new Categoria(1,"Programacion", cursosCategoria1);
+        Categoria categoria2 = new Categoria(2,"Laboratorio de programacion", cursosCategoria2);
+        
+        List<Usuario> usuariosDemy = new ArrayList<Usuario>();
+        usuariosDemy.add(usuario1);
+        usuariosDemy.add(usuario2);
+        usuariosDemy.add(usuario3);
+        usuariosDemy.add(usuario4);
+        usuariosDemy.add(usuario5);
+        usuariosDemy.add(usuario6);
+        usuariosDemy.add(usuario7);
+        usuariosDemy.add(usuario8);
+        usuariosDemy.add(usuario19);
+        
+        List<Categoria> categoriasDemy = new ArrayList<Categoria>();
+        categoriasDemy.add(categoria1);
+        categoriasDemy.add(categoria2);
+        
+        
+        AsapDemy asap = new AsapDemy(usuariosDemy, categoriasDemy);
+        
+        
+        // suscribiendoUsuarios
+        asap.suscribirseACurso(6, 1);
+        
 
     }
 }
