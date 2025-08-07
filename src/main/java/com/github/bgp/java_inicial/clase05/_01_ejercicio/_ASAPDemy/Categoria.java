@@ -5,24 +5,27 @@ import java.util.List;
 
 public class Categoria {
 
-	private String id;
+	private int id;
 	private String nombre;
 	private List<Curso> cursos;
 	
 	
-	public Categoria(String id, String nombre) {
+	public Categoria(int id, String nombre) {
 		this.id = id;
 		this.nombre = nombre;
 		this.cursos = new ArrayList<>();
 	}
 
-	public String getId() {
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+
+	public void setId(int id) {
 		this.id = id;
 	}
+
 
 	public String getNombre() {
 		return nombre;
@@ -40,17 +43,17 @@ public class Categoria {
 		this.cursos = cursos;
 	}
 	
-	public boolean buscarCurso(int idCurso) {
-		boolean encontrado = false;
+	public Curso buscarCurso(int idCurso) {
+		Curso curso = null;
 		int i = 0;
-		while(i < this.cursos.size() && !encontrado) {
+		while(i < this.cursos.size() && curso == null) {
 	
 			if(this.cursos.get(i).mismoId(idCurso)) {
-				encontrado = true;
+				curso = this.cursos.get(i);
 			}
 			i++;
 		}
-		return encontrado;
+		return curso;
 	}
 	
 	

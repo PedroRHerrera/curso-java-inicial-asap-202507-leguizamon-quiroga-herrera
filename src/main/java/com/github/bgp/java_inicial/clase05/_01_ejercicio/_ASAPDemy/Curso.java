@@ -86,4 +86,17 @@ public class Curso {
     public boolean mismoId(int idCurso) {
     	return this.id == idCurso;
     }
+    
+    public Usuario buscarUsuario(int idUsuario) {
+    	Usuario usuario = null;
+		int i = 0;
+		while(i < this.usuarios.size() && usuario == null) {
+	
+			if(this.usuarios.get(i).mismoId(idUsuario)) {
+				usuario = this.usuarios.get(i);
+			}
+			i++;
+		}
+		return usuario;
+	}
 }
