@@ -1,4 +1,4 @@
-# 🚀 Curso Java Inicial - ASAP 2025/07
+# ☕ Curso Java Inicial - ASAP 2025/07
 
 > Repositorio oficial del equipo para el curso **Java Inicial** - Comisión **ASAP 2025/07**
 
