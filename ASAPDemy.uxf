@@ -1,0 +1,103 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLClass</id><coordinates><x>810</x><y>261</y><w>171</w><h>162</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Usuario
+-
+- id: String
+- nombre: String
+- mail: String
+- esBecado: boolean
+-
++ getters()
++ setters()
++ mismoId(int):boolean
++ esBecado():boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>414</x><y>243</y><w>207</w><h>144</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Categoria
+-
+- id: String
+- nombre: String
+-
++ Categoria()
++ getters()
++ setters()
++ buscarCurso(int):Curso</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>351</x><y>477</y><w>270</w><h>225</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Curso
+-
+- id: String
+- titulo: String
+- precio: double
+- estrellas: double
+
+-
++ Curso()
++ getters()
++ setters()
++ mismoId(int):boolean
+- estaSuscrito(int):boolean
+- esAutor(int):boolean
+- limiteBecadosAlcanzado():boolean
++ suscribirUsuario(Usuario):RespuestaSuscripcion
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>468</x><y>774</y><w>144</w><h>117</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Leccion
+-
+- nombre: String
+- duracion: int
+--
++ Leccion()
++ getters()
++ setters()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>711</x><y>783</y><w>144</w><h>135</h></coordinates><panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+TipoLeccion
+-
+_+ TEXTO: TipoLeccion_
+_+ VIDEO: TipoLeccion_
+_+ RECURSO: TipoLeccion_
+-
++ getters()
++ setters()
+- TipoLeccion()
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>558</x><y>0</y><w>324</w><h>144</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+ASAPDemy
+-
+-
++ suscribirseACurso(idUsuario, idCurso): RespuestaSuscripcion
+-
++ ASAPDemy()
++ getters()
++ setters()
+- buscarUsuario(int):Usuario
+- buscarCurso(int):Curso
+- suscribirseACurso(int, int):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>873</x><y>81</y><w>81</w><h>198</h></coordinates><panel_attributes>lt=&lt;-
+- usuarios
+m1=*</panel_attributes><additional_attributes>20;200;20;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>72</y><w>81</w><h>189</h></coordinates><panel_attributes>lt=&lt;-
+- categorias
+m1=*</panel_attributes><additional_attributes>10;190;10;40;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>378</y><w>63</w><h>117</h></coordinates><panel_attributes>lt=&lt;-
+- cursos
+m1=1..*</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>297</y><w>216</w><h>225</h></coordinates><panel_attributes>lt=&lt;-
+- autor
+m1=1</panel_attributes><additional_attributes>220;10;110;10;110;230;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>531</x><y>693</y><w>81</w><h>99</h></coordinates><panel_attributes>lt=&lt;-
+- lecciones
+m1=1..*</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>603</x><y>792</y><w>126</w><h>45</h></coordinates><panel_attributes>lt=&lt;-
+- tipo
+m1=1</panel_attributes><additional_attributes>120;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>414</y><w>315</w><h>171</h></coordinates><panel_attributes>lt=&lt;-
+- usuarios
+m1=1..*</panel_attributes><additional_attributes>310;10;310;170;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>990</x><y>54</y><w>225</w><h>189</h></coordinates><panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+RespuestaSuscripcion
+-
+_+ CURSO_INEX: RespuestaSuscripcion_
+_+ USUARIO_INEX: RespuestaSuscripcion_
+_+ YA_SUSCRIPTO: RespuestaSuscripcion_
+_+ ES_AUTOR: RespuestaSuscripcion_
+_+ SUSCRIPTO_OK: RespuestaSuscripcion_
+
+-
++ getters()
++ setters
+- RespuestaSuscripcion(String):String
++ mostrarMensaje():void
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>873</x><y>63</y><w>135</w><h>54</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>130;40;10;10</additional_attributes></element></diagram>
