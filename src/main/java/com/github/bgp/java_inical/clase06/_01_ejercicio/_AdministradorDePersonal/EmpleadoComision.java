@@ -1,7 +1,5 @@
 package com.github.bgp.java_inical.clase06._01_ejercicio._AdministradorDePersonal;
 
-import java.util.Date;
-
 public class EmpleadoComision extends Empleado {
     private int cantidadClientes;
     private final double SALARIO_MINIMO = 20000;
@@ -11,6 +9,8 @@ public class EmpleadoComision extends Empleado {
         super(dni, nombre, apellido, anioIngreso);
         this.cantidadClientes = cantidadClientes;
     }
+    
+    /*------------------------------------------------------------------------------------------*/
 
     @Override
     public double calcularSalario() {
@@ -20,22 +20,13 @@ public class EmpleadoComision extends Empleado {
         }
         return salarioTotal;
     }
+    
+    /*------------------------------------------------------------------------------------------*/
 
     public int getCantidadClientes() {
         return cantidadClientes;
     }
-    public void setCantidadClientes(int cantidadClientes) {
-        this.cantidadClientes = cantidadClientes;
-    }
-
-
-    public double getSALARIO_MINIMO() {
-        return SALARIO_MINIMO;
-    }
-
-    public double getMONTO_A_COBRAR_X_CLIENTE() {
-        return MONTO_A_COBRAR_X_CLIENTE;
-    }
+    
 
     public boolean masClientes(int clientes) {
         return this.cantidadClientes > clientes;

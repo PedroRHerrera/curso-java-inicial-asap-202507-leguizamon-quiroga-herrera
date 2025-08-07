@@ -1,11 +1,14 @@
 package com.github.bgp.java_inical.clase06._01_ejercicio._AdministradorDePersonal;
 
-import java.time.LocalDate;
-
 public class Main {
     public static void main(String[] args) {
+    	
+    	//Se crea una instancia de Empresa
         Empresa telefe = new Empresa();
-
+        
+        /*------------------------------------------------------------------------------------------*/
+        
+        // Se agregan empleados de Comision a la empresa
         telefe.agregarEmpleado(new EmpleadoComision(42555666, "Maria", "Becerra", 2005, 10));
         telefe.agregarEmpleado(new EmpleadoComision(42555667, "Lionel", "Scaloni", 1998, 12));
         telefe.agregarEmpleado(new EmpleadoComision(42555668, "Bautista", "Montenegro", 1997, 9));
@@ -26,8 +29,10 @@ public class Main {
         telefe.agregarEmpleado(new EmpleadoComision(42555683, "Federico", "Bal", 1996, 20));
         telefe.agregarEmpleado(new EmpleadoComision(42555684, "Brenda", "Asnicar", 1991, 11));
         telefe.agregarEmpleado(new EmpleadoComision(42555685, "Gastón", "Dalmau", 1993, 10));
+        
+        /*------------------------------------------------------------------------------------------*/
 
-
+        // Se agregan empleados de Salario Fijo a la empresa
         telefe.agregarEmpleado(new EmpleadoSalarioFijo(43000001, "Sofia", "Juarez", 2024));
         telefe.agregarEmpleado(new EmpleadoSalarioFijo(43000002, "Mateo", "Rinaldi", 2020));
         telefe.agregarEmpleado(new EmpleadoSalarioFijo(43000003, "Julia", "Salguero", 2022));
@@ -49,8 +54,12 @@ public class Main {
         telefe.agregarEmpleado(new EmpleadoSalarioFijo(43000019, "Milagros", "Palacios", 2000));
         telefe.agregarEmpleado(new EmpleadoSalarioFijo(43000020, "Tobias", "Mendez", 2016));
 
-
-        //telefe.mostrarSalarios();
+        /*------------------------------------------------------------------------------------------*/
+        
+        //Test
+        telefe.mostrarSalarios();
         telefe.empleadoConMasClientes().mostrarEmpleado();
+        
+        /*------------------------------------------------------------------------------------------*/
     }
 }

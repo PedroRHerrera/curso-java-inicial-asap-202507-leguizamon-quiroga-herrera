@@ -1,6 +1,5 @@
 package com.github.bgp.java_inical.clase06._01_ejercicio._AdministradorDePersonal;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class EmpleadoSalarioFijo extends Empleado {
@@ -13,6 +12,8 @@ public class EmpleadoSalarioFijo extends Empleado {
     public EmpleadoSalarioFijo(int dni, String nombre, String apellido, int anioIngreso) {
         super(dni, nombre, apellido, anioIngreso);
     }
+    
+    /*------------------------------------------------------------------------------------------*/
 
     @Override
     public double calcularSalario() {
@@ -27,6 +28,8 @@ public class EmpleadoSalarioFijo extends Empleado {
         }
         return salario;
     }
+    
+    /*------------------------------------------------------------------------------------------*/
 
     private int calcularAntiguedad() {;
         int anioActual = LocalDateTime.now().getYear();

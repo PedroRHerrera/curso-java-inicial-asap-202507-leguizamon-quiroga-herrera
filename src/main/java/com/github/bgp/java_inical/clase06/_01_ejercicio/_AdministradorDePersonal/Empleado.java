@@ -1,7 +1,5 @@
 package com.github.bgp.java_inical.clase06._01_ejercicio._AdministradorDePersonal;
 
-import java.util.Date;
-
 public abstract class Empleado {
     private int dni;
     private String nombre;
@@ -14,40 +12,11 @@ public abstract class Empleado {
         this.apellido = apellido;
         this.anioIngreso = anioIngreso;
     }
-
-    public Empleado() {
-    }
-
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+    
+    /*------------------------------------------------------------------------------------------*/
 
     public int getAnioIngreso() {
-        return anioIngreso;
-    }
-
-    public void setAnioIngreso(int anioIngreso) {
-        this.anioIngreso = anioIngreso;
+    	return this.anioIngreso;
     }
 
     public double getSalario() {
@@ -55,10 +24,13 @@ public abstract class Empleado {
     }
 
     public abstract double calcularSalario();
+    
+    /*------------------------------------------------------------------------------------------*/
 
     public void mostrarSalario() {
         System.out.println("Nombre " + this.nombre + " " + this.apellido + "  - Salario: $" + this.getSalario());
     }
+    
     public void mostrarEmpleado(){
         System.out.println("Nombre: " + this.nombre + " " + "Apellido: " + this.apellido );
     }
