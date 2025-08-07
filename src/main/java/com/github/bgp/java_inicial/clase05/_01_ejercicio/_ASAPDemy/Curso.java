@@ -24,69 +24,14 @@ public class Curso {
         this.usuarios = usuarios;
         this.lecciones = lecciones;
     }
-
-    public Curso() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public double getEstrellas() {
-        return estrellas;
-    }
-
-    public void setEstrellas(double estrellas) {
-        this.estrellas = estrellas;
-    }
-
-    public List<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(ArrayList<Usuario> usuarios) {
-        this.usuarios = usuarios;
-    }
-
-    public Usuario getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Usuario autor) {
-        this.autor = autor;
-    }
-
-    public List<Leccion> getLecciones() {
-        return lecciones;
-    }
-
-    public void setLecciones(ArrayList<Leccion> lecciones) {
-        this.lecciones = lecciones;
-    }
+    
+    // ----------------------------------------------------------------------------
     
     public boolean mismoId(int idCurso) {
     	return this.id == idCurso;
     }
+    
+    // ----------------------------------------------------------------------------
     
     // YA_SUSCRITO
     private boolean estaSuscrito(int idUsuario) {
@@ -101,6 +46,8 @@ public class Curso {
 		}
 		return respuesta;
 	}
+    
+    // ----------------------------------------------------------------------------
     
     // ES_AUTOR
     private boolean esAutor(int idUsuario) {
@@ -124,10 +71,12 @@ public class Curso {
     	return respuesta;
     }
     
+    // ----------------------------------------------------------------------------
+    
     public RespuestaSuscripcion suscribirUsuario(Usuario usuario) {
     	RespuestaSuscripcion respuesta = RespuestaSuscripcion.SUSCRIPTO_OK;
-    	if(!estaSuscrito(usuario.getId())) {
-    		if (!esAutor(usuario.getId())) {
+    	if(!esAutor(usuario.getId())) {
+    		if (!estaSuscrito(usuario.getId())) {
     			if (usuario.esBecado()) {
         			if (!limiteBecadosAlcanzado()) {
         				this.usuarios.add(usuario);
@@ -136,15 +85,14 @@ public class Curso {
         			}
         		}
     		} else {
-    			respuesta = RespuestaSuscripcion.ES_AUTOR;
+    			respuesta = RespuestaSuscripcion.YA_SUSCRIPTO;
     		}
     	} else {
-    		respuesta = RespuestaSuscripcion.YA_SUSCRIPTO;
+			respuesta = RespuestaSuscripcion.ES_AUTOR;
     	}
     	
     	return respuesta;
     }
-    
     
     
 }

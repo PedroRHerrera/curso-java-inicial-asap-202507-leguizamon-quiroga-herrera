@@ -13,6 +13,8 @@ public enum RespuestaSuscripcion {
 	private RespuestaSuscripcion(String mensaje) {
 		this.mensaje = mensaje;
 	}
+	
+    // ----------------------------------------------------------------------------
 
 	public void mostrarMensaje() {
 		System.out.println(mensaje);

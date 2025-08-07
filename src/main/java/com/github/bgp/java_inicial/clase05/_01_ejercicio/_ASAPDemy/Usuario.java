@@ -14,37 +14,7 @@ public class Usuario {
 		this.esBecado = esBecado;
 	}
 	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getMail() {
-		return mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public boolean isEsBecado() {
-		return esBecado;
-	}
-
-	public void setEsBecado(boolean esBecado) {
-		this.esBecado = esBecado;
-	}
+    // ----------------------------------------------------------------------------
 
 	public boolean mismoId(int idUsuario) {
     	return this.id == idUsuario;
@@ -52,6 +22,10 @@ public class Usuario {
 	
 	public boolean esBecado() {
 		return this.esBecado;
+	}
+
+	public int getId() {
+		return this.id;
 	}
 	
 }

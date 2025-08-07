@@ -11,21 +11,7 @@ public class AsapDemy {
         this.categorias = categorias;
     }
 
-    public List<Categoria> getCategorias() {
-        return categorias;
-    }
-
-    public void setCategorias(List<Categoria> categorias) {
-        this.categorias = categorias;
-    }
-
-    public List<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
-    }
+    // ----------------------------------------------------------------------------
     
     // USUARIO_INEX
     private Usuario buscarUsuario(int idUsuario) {
@@ -41,6 +27,8 @@ public class AsapDemy {
 		return usuario;
 	}
     
+    // ----------------------------------------------------------------------------
+    
     private Curso buscarCurso(int idCurso) {
     	Curso curso = null;
     	int i = 0;
@@ -52,6 +40,8 @@ public class AsapDemy {
     	
     	return curso;
     }
+    
+    // ----------------------------------------------------------------------------
     
     public void suscribirseACurso(int idUsuario, int idCurso) {
     	RespuestaSuscripcion respuesta = RespuestaSuscripcion.SUSCRIPTO_OK;

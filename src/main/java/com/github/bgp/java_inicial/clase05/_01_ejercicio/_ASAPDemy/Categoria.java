@@ -14,33 +14,8 @@ public class Categoria {
 		this.nombre = nombre;
 		this.cursos = cursos;
 	}
-
-
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public List<Curso> getCursos() {
-		return cursos;
-	}
-
-	public void setCursos(List<Curso> cursos) {
-		this.cursos = cursos;
-	}
+	
+	// ----------------------------------------------------------------------------
 	
 	public Curso buscarCurso(int idCurso) {
 		Curso curso = null;

@@ -105,7 +105,8 @@ public class Main {
         usuariosDemy.add(usuario6);
         usuariosDemy.add(usuario7);
         usuariosDemy.add(usuario8);
-        usuariosDemy.add(usuario19);
+        usuariosDemy.add(usuario10);
+        usuariosDemy.add(usuario16);
         
         List<Categoria> categoriasDemy = new ArrayList<Categoria>();
         categoriasDemy.add(categoria1);
@@ -116,8 +117,25 @@ public class Main {
         
         
         // suscribiendoUsuarios
+        
+        // CURSO_INEX ---------------------------------------
+        asap.suscribirseACurso(8, 800);
+        
+        // USUARIO_INEX -------------------------------------
+        asap.suscribirseACurso(50, 1);
+        
+        // YA_SUSCRITO --------------------------------------
+        asap.suscribirseACurso(1, 1);
+        
+        // ES_AUTOR -----------------------------------------
+        asap.suscribirseACurso(16, 1);
+        
+        // MAX_BECADOS --------------------------------------
         asap.suscribirseACurso(6, 1);
         
+        // SUSCRITO_OK --------------------------------------
+        asap.suscribirseACurso(10, 1);
+ 
 
     }
 }
