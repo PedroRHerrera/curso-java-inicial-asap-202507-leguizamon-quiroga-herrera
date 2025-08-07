@@ -31,4 +31,18 @@ public class AsapDemy {
     public void suscribirseACurso(String idUsuario, String idCurso) {
     	
     }
+    
+    // USUARIO_INEX
+    public Usuario buscarUsuario(int idUsuario) {
+    	Usuario usuario = null;
+		int i = 0;
+		while(i < this.usuarios.size() && usuario == null) {
+	
+			if(this.usuarios.get(i).mismoId(idUsuario)) {
+				usuario = this.usuarios.get(i);
+			}
+			i++;
+		}
+		return usuario;
+	}
 }

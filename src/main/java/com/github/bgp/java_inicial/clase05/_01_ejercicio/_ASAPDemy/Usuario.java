@@ -50,4 +50,8 @@ public class Usuario {
     	return this.id == idUsuario;
     }
 	
+	public boolean esBecado() {
+		return this.esBecado;
+	}
+	
 }

@@ -12,6 +12,7 @@ public class Curso {
     private Usuario autor;
     private List<Usuario> usuarios;
     private List<Leccion> lecciones;
+    private static int MAX_BECADOS = 5;
 
 
     public Curso(int id, String titulo, double precio, double estrellas, Usuario autor, List<Usuario> usuarios, List<Leccion> lecciones) {
@@ -87,16 +88,62 @@ public class Curso {
     	return this.id == idCurso;
     }
     
-    public Usuario buscarUsuario(int idUsuario) {
-    	Usuario usuario = null;
+    // YA_SUSCRITO
+    private boolean estaSuscrito(int idUsuario) {
+    	boolean respuesta = false;
 		int i = 0;
-		while(i < this.usuarios.size() && usuario == null) {
+		while(i < this.usuarios.size() && !respuesta) {
 	
 			if(this.usuarios.get(i).mismoId(idUsuario)) {
-				usuario = this.usuarios.get(i);
+				respuesta = true;
 			}
 			i++;
 		}
-		return usuario;
+		return respuesta;
 	}
+    
+    // ES_AUTOR
+    private boolean esAutor(int idUsuario) {
+    	return this.autor.mismoId(idUsuario);
+    }
+    
+    
+    private boolean limiteBecadosAlcanzado() {
+    	boolean respuesta = false;
+    	int cont = 0;
+    	int i = 0;
+    	
+    	while(i < this.usuarios.size() && !respuesta) {
+    		if (this.usuarios.get(i).esBecado()) {
+    			cont++;
+    		}
+    		respuesta = (cont == MAX_BECADOS) ? true : false;
+    		i++;
+    	}
+    	
+    	return respuesta;
+    }
+    
+    public void suscribirUsuario(Usuario usuario) {
+    	if(!estaSuscrito(usuario.getId())) {
+    		if (!esAutor(usuario.getId())) {
+    			if (usuario.esBecado()) {
+        			if (!limiteBecadosAlcanzado()) {
+        				this.usuarios.add(usuario);
+        				
+        				System.out.println("Usuario suscrito con éxito.");
+        			} else {
+        				System.out.println("Error. Límite de usuarios becados alcanzados: " + MAX_BECADOS);
+        			}
+        		}
+    		} else {
+    			System.out.println("Error. El usuario es el autor.");
+    		}
+    	} else {
+    		System.out.println("Error. El usuario ya está suscrito al curso.");
+    	}
+    }
+    
+    
+    
 }
