@@ -16,6 +16,13 @@
 
 ---
 
+## 👨‍🏫 Profesor
+
+- **Ignacio Sánchez**  
+  📧 *sanchezih@gmail.com*
+
+---
+
 ## 📚 Enunciado de ejercicios
 
 Los ejercicios correspondientes al curso se encuentran disponibles en el siguiente documento:
