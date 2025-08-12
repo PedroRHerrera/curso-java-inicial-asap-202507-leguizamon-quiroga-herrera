@@ -1,4 +1,4 @@
-package com.github.bgp.java_inical.clase07._01_ejercicio._EstadisticasExamenesDeConducir;
+package com.github.bgp.java_inicial.clase07._01_ejercicio._EstadisticasExamenesDeConducir;
 
 public class Circuito implements Evaluable{
 

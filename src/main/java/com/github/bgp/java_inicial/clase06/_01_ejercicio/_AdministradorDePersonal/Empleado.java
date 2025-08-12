@@ -1,4 +1,4 @@
-package com.github.bgp.java_inical.clase06._01_ejercicio._AdministradorDePersonal;
+package com.github.bgp.java_inicial.clase06._01_ejercicio._AdministradorDePersonal;
 
 public abstract class Empleado {
     private int dni;
