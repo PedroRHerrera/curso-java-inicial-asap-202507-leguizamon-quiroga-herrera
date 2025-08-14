@@ -26,19 +26,18 @@ public class SedeDeLicencias {
 	}
 	
 	private double obtenerPorcentajeReprobados() {
-		double porcentaje = 0;
 		int contReprobados = 0;
+		int cantExamenes = this.examenes.size();
 		
 		for (Examen examen: examenes) {
 			if (!examen.evaluar()) {
 				contReprobados++;
 			}
-			//contReprobados = !examen.evaluar() ? contReprobados++ : contReprobados;
+			
 		}
 		
-		porcentaje = (contReprobados * 100) / this.examenes.size();
+		return (cantExamenes > 0 ? (double)contReprobados / cantExamenes * 100 : 0);
 		
-		return porcentaje;
 	}
 	
 	private double obtenerPromedioTiempoAutosAprobados() {
