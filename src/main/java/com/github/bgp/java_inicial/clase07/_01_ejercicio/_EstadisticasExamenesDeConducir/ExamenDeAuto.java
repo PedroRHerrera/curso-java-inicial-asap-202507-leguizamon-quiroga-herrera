@@ -3,10 +3,12 @@ package com.github.bgp.java_inicial.clase07._01_ejercicio._EstadisticasExamenesD
 public class ExamenDeAuto extends Examen{
 	
 	private final int SEGUNDOS_DESAPRUEBA = 90;
+	private Auto auto;
 	private Circuito circuito;
 
-	public ExamenDeAuto(String fecha, Persona persona, Vehiculo vehiculo, Circuito circuito) {
-		super(fecha, persona, vehiculo);
+	public ExamenDeAuto(String fecha, Persona persona, Auto auto, Circuito circuito) {
+		super(fecha, persona);
+		this.auto = auto;
 		this.circuito = circuito;
 	}
 	

@@ -7,10 +7,12 @@ public class ExamenDeMoto extends Examen {
 	
 	private final int SEGUNDOS_DESAPRUEBA = 120;
 	private final int CILINDRADA_LIMITE = 150;
+	private Moto moto;
 	private List<Circuito> circuitos;
 	
-	public ExamenDeMoto(String fecha, Persona persona, Vehiculo vehiculo) {
-		super(fecha, persona, vehiculo);
+	public ExamenDeMoto(String fecha, Persona persona, Moto moto) {
+		super(fecha, persona);
+		this.moto = moto;
 		this.circuitos = new ArrayList<Circuito>();
 	}
 	
@@ -55,7 +57,7 @@ public class ExamenDeMoto extends Examen {
 	}
 	
 	private boolean compararCilindradaMoto(int valor) {
-		return super.compararCilindrada(valor);
+		return this.moto.compararCilindrada(valor);
 	}
 	
 	
