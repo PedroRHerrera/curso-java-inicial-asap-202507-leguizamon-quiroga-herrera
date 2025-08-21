@@ -1,0 +1,44 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+1)
+
+Este ejemplo viola el SRP porque la Clase ReportGenerator tiene múltiples responsabilidades, generar informes en diferentes formatos 
+y enviar correos electrónicos.
+Se puede solucionar dividiendo la clase en varias, cada una con una única responsabilidad.
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+2) 
+
+En la clase PaymentProcessor, el método processPayment() depende directamente de los tipos concretos de pago, 
+usando condicionales if e instanceof. Esto significa que:
+Cada vez que se agrega un nuevo tipo de pago hay que modificar la clase PaymentProcessor.
+Esto rompe el OCP, porque la clase no está cerrada para modificación: debe cambiar cada vez que se agregue un nuevo comportamiento.
+Se puede solucionar aplicando polimorfismo para extender el comportamiento sin modificar la clase existente.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+3)
+
+Se viola el LSP porque la clase Square no se comporta como un verdadero sustituto de Rectangle. 
+Rectangle permite que el ancho (width) y el alto (height) se establezcan de forma independiente. 
+Square fuerza a que width y height siempre sean iguales.
+La solución es no heredar cuando el comportamiento rompe el contrato, y en su lugar usar interfaces comunes o composición.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+4) 
+
+Se rompe el principio de ISP porque PDFDocument depende de una interfaz cuyo método edit() no implementa.
+La solución podría ser crear una interfaz editable que incluya el método editar() y sacarlo de Document, 
+ya que no todos los documentos son editables.
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+5) 
+
+Este ejemplo viola el DIP porque el módulo de alto nivel (LogManager) depende directamente de un detalle de implementación (FileLogger).
+La solución es introducir una abstracción (Logger) e inyectar la implementación concreta desde fuera.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
