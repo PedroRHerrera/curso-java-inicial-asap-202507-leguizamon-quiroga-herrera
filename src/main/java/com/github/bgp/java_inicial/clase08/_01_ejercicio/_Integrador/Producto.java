@@ -1,6 +1,6 @@
 package com.github.bgp.java_inicial.clase08._01_ejercicio._Integrador;
 
-public class Producto {
+public class Producto implements Valuable{
     private String id;
     private double precio;
 
@@ -9,7 +9,7 @@ public class Producto {
         this.precio = precio;
     }
 
-    public double getPrecio() {
+    public double calcularPrecio() {
         return precio;
     }
 }

@@ -11,6 +11,6 @@ public class Item implements Valuable {
 
     @Override
     public double calcularPrecio() {
-        return producto.getPrecio() * cantidad;
+        return producto.calcularPrecio() * cantidad;
     }
 }
