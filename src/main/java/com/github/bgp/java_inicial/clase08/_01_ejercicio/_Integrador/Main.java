@@ -1,4 +1,4 @@
-package com.github.bgp.java_inicial.integrador;
+package com.github.bgp.java_inicial.clase08._01_ejercicio._Integrador;
 
 import com.github.sanchezih.util.Fecha;
 

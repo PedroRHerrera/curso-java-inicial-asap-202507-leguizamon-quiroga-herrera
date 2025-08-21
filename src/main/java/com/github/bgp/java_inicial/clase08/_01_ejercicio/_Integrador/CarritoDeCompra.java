@@ -1,4 +1,4 @@
-package com.github.bgp.java_inicial.integrador;
+package com.github.bgp.java_inicial.clase08._01_ejercicio._Integrador;
 
 import com.github.sanchezih.util.Fecha;
 
@@ -47,7 +47,4 @@ public class CarritoDeCompra implements Valuable {
         return cuotas;
     }
 
-    public Fecha getFecha() {
-        return fecha;
-    }
 }
