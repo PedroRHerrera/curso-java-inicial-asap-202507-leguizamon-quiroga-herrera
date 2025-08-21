@@ -16,7 +16,7 @@ public class CarritoDeCompra implements Valuable {
         this.items = items;
         this.metodoDePago = metodoDePago;
         this.fecha = fecha;
-        this.metodoDePago.setCarrito(this);
+        this.metodoDePago.setFechaCarrito(fecha);
     }
 
     @Override

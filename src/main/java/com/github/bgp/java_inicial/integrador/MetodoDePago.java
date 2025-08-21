@@ -4,18 +4,18 @@ import com.github.sanchezih.util.Fecha;
 
 public abstract class MetodoDePago {
     private Fecha fecha;
-    private CarritoDeCompra carrito;
+    private Fecha fechaCarrito;
 
     public MetodoDePago(Fecha fecha) {
         this.fecha = fecha;
     }
 
-    public void setCarrito(CarritoDeCompra carrito) {
-        this.carrito = carrito;
+    public void setFechaCarrito(Fecha fechaCarrito) {
+        this.fechaCarrito = fechaCarrito;
     }
 
     public long diasTranscurridos() {
-        return Fecha.diasTranscurridosEntreFechas(carrito.getFecha(), this.fecha );
+        return Fecha.diasTranscurridosEntreFechas(fechaCarrito, this.fecha);
     }
 
     public abstract double calcularPrecio(double precio);
