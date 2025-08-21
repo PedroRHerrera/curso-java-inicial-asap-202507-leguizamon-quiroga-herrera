@@ -2,19 +2,21 @@ package com.github.bgp.java_inicial.integrador;
 
 import com.github.sanchezih.util.Fecha;
 
-import java.time.LocalDate;
-
-public abstract class MetodoDePago{
+public abstract class MetodoDePago {
     private Fecha fecha;
+    private CarritoDeCompra carrito;
+
+    public MetodoDePago(Fecha fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setCarrito(CarritoDeCompra carrito) {
+        this.carrito = carrito;
+    }
 
     public long diasTranscurridos() {
-        Fecha fechaActual = new Fecha(LocalDate.now().getDayOfMonth(),LocalDate.now().getMonthValue(),LocalDate.now().getYear());
-        return Fecha.diasTranscurridosEntreFechas(fechaActual, this.fecha);
+        return Fecha.diasTranscurridosEntreFechas(carrito.getFecha(), this.fecha );
     }
 
     public abstract double calcularPrecio(double precio);
-
-    public Fecha getFecha() {
-        return fecha;
-    }
 }

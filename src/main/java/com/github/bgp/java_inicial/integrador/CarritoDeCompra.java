@@ -6,47 +6,48 @@ import com.github.sanchezih.util.Fecha;
 import java.util.List;
 
 public class CarritoDeCompra implements Valuable {
-
-    private Fecha fecha;
-    private List<Item> items;
     private String id;
+    private List<Item> items;
     private MetodoDePago metodoDePago;
+    private Fecha fecha;
 
-    public CarritoDeCompra(Fecha fecha, List<Item> items, String id, MetodoDePago metodoDePago) {
-        this.fecha = fecha;
-        this.items = items;
+    public CarritoDeCompra(String id, List<Item> items, MetodoDePago metodoDePago, Fecha fecha) {
         this.id = id;
+        this.items = items;
         this.metodoDePago = metodoDePago;
+        this.fecha = fecha;
+        this.metodoDePago.setCarrito(this);
     }
 
     @Override
     public double calcularPrecio() {
         double precioFinal = 0;
         for (Item item : items) {
-        	precioFinal += item.calcularPrecio();
+            precioFinal += item.calcularPrecio();
         }
-        
-        return  this.metodoDePago.calcularPrecio(precioFinal);
+        return this.metodoDePago.calcularPrecio(precioFinal);
     }
-    
+
     public String getId() {
-    	return id;
+        return id;
     }
-    
+
     public boolean esTarjetaDeCredito() {
-    	return this.metodoDePago instanceof TarjetaDeCredito;
+        return this.metodoDePago instanceof TarjetaDeCredito;
     }
-    
+
     public int getCuotasTarjeta() {
-    	int cuotas = 0;
-    	TarjetaDeCredito tarjeta;
-    	
-    	if (this.esTarjetaDeCredito()) {
-    		tarjeta = (TarjetaDeCredito) this.metodoDePago;
-    		cuotas = tarjeta.getCantCuotas();
-    	}
-    	
-    	return cuotas;
+        int cuotas = 0;
+        TarjetaDeCredito tarjeta;
+
+        if (this.esTarjetaDeCredito()) {
+            tarjeta = (TarjetaDeCredito) this.metodoDePago;
+            cuotas = tarjeta.getCantCuotas();
+        }
+        return cuotas;
     }
-    
+
+    public Fecha getFecha() {
+        return fecha;
+    }
 }
