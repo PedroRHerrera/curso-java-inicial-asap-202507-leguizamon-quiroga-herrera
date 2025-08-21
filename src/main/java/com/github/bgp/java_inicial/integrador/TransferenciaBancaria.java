@@ -1,5 +1,4 @@
 package com.github.bgp.java_inicial.integrador;
-import com.github.sanchezih.util.Fecha;
 
 public class TransferenciaBancaria extends MetodoDePago {
 
@@ -13,10 +12,10 @@ public class TransferenciaBancaria extends MetodoDePago {
 
     @Override
     public double calcularPrecio(double precio) {
-        return 0;
+        return pasaronMasDias() ? precio + (precio * (PORC_RECARGO * 2)) : precio + (precio * PORC_RECARGO);
     }
-
-    public int diasTranscurridos() {
-        return 0;
-    };
+    
+    private boolean pasaronMasDias() {
+    	return super.diasTranscurridos() > DIAS_RECARGO_ADICIONAL;
+    }
 }

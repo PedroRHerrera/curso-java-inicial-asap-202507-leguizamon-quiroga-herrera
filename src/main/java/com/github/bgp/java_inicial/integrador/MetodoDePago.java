@@ -10,7 +10,7 @@ public abstract class MetodoDePago{
     public long diasTranscurridos() {
         Fecha fechaActual = new Fecha(LocalDate.now().getDayOfMonth(),LocalDate.now().getMonthValue(),LocalDate.now().getYear());
         return Fecha.diasTranscurridosEntreFechas(fechaActual, this.fecha);
-    };
+    }
 
     public abstract double calcularPrecio(double precio);
 

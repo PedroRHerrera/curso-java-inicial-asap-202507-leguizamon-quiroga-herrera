@@ -21,10 +21,32 @@ public class CarritoDeCompra implements Valuable {
 
     @Override
     public double calcularPrecio() {
-        double preciofinal = 0;
+        double precioFinal = 0;
         for (Item item : items) {
-            preciofinal += item.calcularPrecio();
+        	precioFinal += item.calcularPrecio();
         }
-        return  preciofinal;
+        
+        return  this.metodoDePago.calcularPrecio(precioFinal);
     }
+    
+    public String getId() {
+    	return id;
+    }
+    
+    public boolean esTarjetaDeCredito() {
+    	return this.metodoDePago instanceof TarjetaDeCredito;
+    }
+    
+    public int getCuotasTarjeta() {
+    	int cuotas = 0;
+    	TarjetaDeCredito tarjeta;
+    	
+    	if (this.esTarjetaDeCredito()) {
+    		tarjeta = (TarjetaDeCredito) this.metodoDePago;
+    		cuotas = tarjeta.getCantCuotas();
+    	}
+    	
+    	return cuotas;
+    }
+    
 }
